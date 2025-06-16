@@ -4,7 +4,7 @@ const path = require("path");
 const PromptSync = require("prompt-sync");
 let i = 0; i <= 0; i++
 let prompt, entrega, urgente, normal, encerrar, valor, Distancia, Pessoa
-
+let valorEntregas = []
 
 do {
 
@@ -14,14 +14,14 @@ do {
     entrega = promptSync((("Tipo de entrega (1 para normal e 0 para urgente): "))) // Se for 1 vai ser Normal e 0 para urgente)
     
     if (entrega == 1) {
-        let processamento = valor * Distancia
-        console.log(`${processamento}`)
-           
-
+        let j = 0; j <= 0; j++
+        
+        valorEntregas [i] = distancia * valor
         // fs.writeFileSync(Arquivos, Conteudo, "utf-8" 
 
     } else{
-        console.log("awwwaa")
+        valorEntregas [i] = Distancia * (valor * 1.2)
+        console.log(`${valorEntregas}`)
     }
 } while ((isNaN(valor)) && (isNaN(Distancia)));
 
