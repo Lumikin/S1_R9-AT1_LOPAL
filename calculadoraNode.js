@@ -11,9 +11,11 @@ do {
     valor = promptSync((("digite o valor por kilometro: "))) // o valor do quilometro
     Distancia = promptSync((("digite a distancia em Kilometros: ")))// e a distancia em kilometro 
     entrega = promptSync((("Tipo de entrega (1 para normal e 0 para urgente): "))) // Se for 1 vai ser Normal e 0 para urgente)
+    let processamento = valor * Distancia
     if (entrega == 1) {
-        let mediaNormal = valor / Distancia
+        console.log(processamento)
            
+
         // fs.writeFileSync(Arquivos, Conteudo, "utf-8" 
 
     }
