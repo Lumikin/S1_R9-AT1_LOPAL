@@ -3,8 +3,11 @@ const promptSync = require("prompt-sync")();
 const path = require("path");
 const PromptSync = require("prompt-sync");
 let i = 0; i <= 0; i++
-let prompt, entrega, urgente, normal, encerrar, valor, Distancia, Pessoa
+let  entrega, encerrar, valor, distancia, Pessoa
 let valorEntregas = []
+let Distancia = []
+let pessoa = []
+
 
 do {
 
@@ -12,16 +15,16 @@ do {
     valor = promptSync((("digite o valor por kilometro: "))) // o valor do quilometro
     Distancia = promptSync((("digite a distancia em Kilometros: ")))// e a distancia em kilometro 
     entrega = promptSync((("Tipo de entrega (1 para normal e 0 para urgente): "))) // Se for 1 vai ser Normal e 0 para urgente)
-    
+
     if (entrega == 1) {
-        let j = 0; j <= 0; j++
-        
-        valorEntregas [i] = distancia * valor
+        let i = 0; i <= 0; i++
+
+        valorEntregas[i] = distancia * valor
         // fs.writeFileSync(Arquivos, Conteudo, "utf-8" 
 
-    } else{
-        valorEntregas [i] = Distancia * (valor * 1.2)
-        console.log(`${valorEntregas}`)
+    } else {
+        valorEntregas[i] = Distancia * (valor * 1.2);
+        console.log(`${valorEntregas}`);
     }
 } while ((isNaN(valor)) && (isNaN(Distancia)));
 
@@ -30,7 +33,7 @@ do {
 
 do {
 
-if (tipoUrgente = true) { // Estrutura condicional 
+if (tipoUrgente = true) { // Estrutura condicional
 
     valorEntregas [i] = distancia * (valor * 1,2); // Calculo caso a entrega seja urgente.
     i++;
@@ -55,6 +58,6 @@ if (tipoUrgente = true) { // Estrutura condicional
 
 
 
-console.log(O valor das entregas foram: ${valorTotal}. A do costo por entrega é: ${média}. ) // Exibição dos valores calculados.
+// console.log(O valor das entregas foram: ${valorTotal}. A do costo por entrega é: ${média}. ) // Exibição dos valores calculados.
 
 */
