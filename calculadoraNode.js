@@ -1,60 +1,57 @@
 const fs = require("fs");
+const { console } = require("inspector");
 const promptSync = require("prompt-sync")();
 const path = require("path");
 const PromptSync = require("prompt-sync");
-let i = 0; i <= 0; i++
-let prompt, entrega, urgente, normal, encerrar, valor, Distancia, Pessoa
+let i = 0;
+let encerrar, distancia, media;
+let valor = []
+let valorEntregas = [];
+let Distancia = [];
+let pessoa = [];
+let valorTotal = 0;
+let tipoUrgente
+
 
 
 do {
 
-    Pessoa = promptSync((`Digite o nome da pessoa ${i}: `)) //Atribuir o nome da pessoa
+    pessoa = promptSync((`Digite o nome da pessoa ${i+1}: `)) //Atribuir o nome da pessoa
     valor = promptSync((("digite o valor por kilometro: "))) // o valor do quilometro
-    Distancia = promptSync((("digite a distancia em Kilometros: ")))// e a distancia em kilometro 
-    entrega = promptSync((("Tipo de entrega (1 para normal e 0 para urgente): "))) // Se for 1 vai ser Normal e 0 para urgente)
+    distancia = promptSync((("digite a distancia em Kilometros: ")))// e a distancia em kilometro 
+    tipoUrgente = promptSync((("Tipo de entrega (1 para normal e 0 para urgente): "))) // Se for 1 vai ser Normal e 0 para urgente)
+
     
-    if (entrega == 1) {
-        let processamento = valor * Distancia
-        console.log(`${processamento}`)
-           
+        if (tipoUrgente == 0) { // Estrutura condicional
 
-        // fs.writeFileSync(Arquivos, Conteudo, "utf-8" 
-
-    } else{
-        console.log("awwwaa")
-    }
-} while ((isNaN(valor)) && (isNaN(Distancia)));
+            valorEntregas[i] = distancia * (valor * 1.2); // Calculo caso a entrega seja urgente.
+            console.log(`dista: ${distancia}`);
+            console.log(`val: ${valor}`);
+            console.log(`Entrega if: ${valorEntregas[i]}`);
 
 
-/*
+        } else {
 
-do {
+            valorEntregas[i] = distancia * valor; // Calculo caso a entrega seja normal.
 
-if (tipoUrgente = true) { // Estrutura condicional 
 
-    valorEntregas [i] = distancia * (valor * 1,2); // Calculo caso a entrega seja urgente.
-    i++;
+        }
+        valorTotal += valorEntregas[i]; // Calculo do valor Total (total de entregas).
+        console.log(`Entregas: ${valorEntregas}`);
+        console.log(`i: ${i}`);
+        console.log(`Valor total: ${valorTotal}`);
+        encerrar = promptSync("deseja encerrar? 0 para sim e 1 para não: ");
+        i++;
 
-} else {
+   
 
-    valorEntregas [i] = distancia * valor; // Calculo caso a entrega seja normal.
-    i++;
 
-}
-    valorTotal = valorTotal + valorEntregas; // Calculo do valor Total (total de entregas).
 
-} while (encerrar = false);
+} while ( encerrar == 1);
 
+    console.log(valorEntregas)
     media = valorTotal / i; // Calculo média, após o calculo do valor total.
+    console.log(media);
+    valorTotal = valorTotal; // Aredondamento para 2 casas decimais
+    media = media; // Arredondamento para 2 casas decimais
 
-    valorTotal = valorTotal.toFixed(2); // Aredondamento para 2 casas decimais
-    media = media.toFixed(2); // Arredondamento para 2 casas decimais
-
-
-// Espaço para colocar o histórico de calculo em um arquivo de Texto.
-
-
-
-console.log(O valor das entregas foram: ${valorTotal}. A do costo por entrega é: ${média}. ) // Exibição dos valores calculados.
-
-*/
